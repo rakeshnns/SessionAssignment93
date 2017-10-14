@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 9.3</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!--CDN fro JQUERY BOOTSTTRAP -->
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+     <style type="text/css">
+      /* Left Nav bar styling */
+     	.navbar-left{
+     		position: fixed;
+     		width: 110px;
+        z-index: 1;
+     	}
+
+      /* Left Nav Dropdown for less than 300px bar styling */
+      #myNavbar{
+        position: relative;
+        width: 110px;
+
+        z-index: 1;
+      }
+      /* Content styling */
+     	#content{
+     		padding-left: 150px;
+     	}
+      /* collapse styling */
+      .collapse{
+        display: none;
+      }
+      /* Heigt of Nav bar when greater than 300px styling */
+      .height{
+        height: 100%;
+      }
+
+     </style>
+     <script type="text/javascript">
+           //Checking Document sise while loading
+           $(document).ready(function(){
+           	  $("#docw").html($(window).width()); 
+               if($(window).width() < 400){
+                 $("#myNavbar").addClass("collapse navbar-collapse");
+                 $(".navbar-left").removeClass("height");
+                 $("button").css({"display":"inline-block"})
+
+               }else{
+               	$("#myNavbar").removeClass("collapse navbar-collapse");
+                $(".navbar-left").addClass("height");
+                $("button").css({"display":"none"})
+               } 
+
+           });
+           //Checking Document sise on resizing the screen
+           $(window).resize(function(){
+                $("#docw").html($(window).width());           	
+               if($(window).width() < 400){
+                $("#myNavbar").addClass("collapse navbar-collapse");
+                $(".navbar-left").removeClass("height");
+                $("button").css({"display":"inline-block"})
+               }else{
+               	$("#myNavbar").removeClass("collapse navbar-collapse");
+                $(".navbar-left").addClass("height");
+                $("button").css({"display":"none"})
+               } 
+           });
+     </script>
+</head>
+<body>
+       <!-- Navigation block boostrab classe-->
+       <nav class="navbar navbar-inverse navbar-left">
+        <div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background: white;">
+            <!-- Caret effect for size less than 300 -->  
+            <span class="caret"></span>
+            <span class="caret"></span>
+            <span class="caret"></span> 
+            </button>
+        </div>    
+
+      <!-- Main Naviation Content--> 
+      <div class="container-fluid" id="myNavbar" >
+        <!-- Navigation Header -->
+      	<div class="navbar-header">
+      		<a href="#" class="navbar-brand">DUMDUM</a>
+
+      	</div>
+        <!--Navigation list -->
+      	<ul class="nav navbar-nav">
+          <li><a href="#">Page 1</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+      	</ul>
+
+      </div>
+
+    </nav>  
+   	<div id="content">
+   		<blockquote>
+   			Bootstrap Get Started
+
+            What is Bootstrap?
+            Bootstrap is a free front-end framework for faster and easier web development
+            Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, 
+            image carousels and many other, as well as optional JavaScript plugins Bootstrap also gives you the ability to easily 
+            create responsive designs
+            
+            What is Responsive Web Design?
+
+            Responsive web design is about creating web sites which automatically adjust themselves to look good on all devices, 
+            from small phones to large desktops.
+
+            Bootstrap History
+            Bootstrap was developed by Mark Otto and Jacob Thornton at Twitter, and released as an open source product in August 2011 on GitHub.
+
+            In June 2014 Bootstrap was the No.1 project on GitHub!
+
+            Why Use Bootstrap?
+            Advantages of Bootstrap:
+
+            Easy to use: Anybody with just basic knowledge of HTML and CSS can start using Bootstrap
+            Responsive features: Bootstrap's responsive CSS adjusts to phones, tablets, and desktops
+            Mobile-first approach: In Bootstrap 3, mobile-first styles are part of the core framework
+            Browser compatibility: Bootstrap is compatible with all modern browsers (Chrome, Firefox, Internet Explorer, Safari, and Opera)
+            Where to Get Bootstrap?
+            There are two ways to start using Bootstrap on your own web site.
+
+            You can:
+
+            Download Bootstrap from getbootstrap.com
+            Include Bootstrap from a CDN
+   		</blockquote>
+   		<span>Document Width CUrrently:</span>
+   		<span id="docw"></span>
+   	</div>
+
+
+</body>
+</html>
